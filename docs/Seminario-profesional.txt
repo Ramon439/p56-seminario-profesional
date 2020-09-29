@@ -1,0 +1,10 @@
+  GNU nano 4.9.3                                                                               Seminario-profesional.txt                                                                                Modified
+UNIVERSIDAD POLITECNICA SALESIANA
+UNIVERSIDAD POLITÉCNICA SALESIANA
+
+Seminario Profesional: Node.js + MongoDB
+
+[1].- Git & Github - 21/09/2020
+[2].- Git & Github - 22/09/2020
+[2].- Fundamentos de Javascript - 23/09/2020
+[3].- Fundamentos de Javascri
