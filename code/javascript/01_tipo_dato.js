@@ -1,0 +1,1 @@
+// se trabajo desde la consola del navegador 
