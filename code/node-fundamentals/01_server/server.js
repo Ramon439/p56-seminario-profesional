@@ -9,18 +9,19 @@ app.use( bodyParser.urlencoded( {extended:false} ) )
 app.use( router )
 
 router.get('/carrera', function(req, res){
-   
+   console.log(req.headers)
     
     res.send('Lista de carreras de la Universidad Politecnica Salesiana-Sede Guayaquil')
 
 })
 
 router.post('/carrera', function(req, res){
- console.log( req.body)
- console.log(req.query)
+if(req.query.error == 'ok'){
+res.status(500).send( {tipo_error:1, mensaje_error:'Error en el servidor', mensaje_exito:''})
+}else{
+    res.status(200).send( {tipo_error:0, mensaje_error:'', mensaje_exito:'Todo ok'})
 
- res.status(201).send( {tipo_error:0, mensaje_error:'', mensaje_exito:'Añadido exitosamente'})
-
+}
 })
 
 app.use( '/', express.static('public'))
