@@ -1,6 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-
+const response =require('./network/response')
 const router = express.Router()
 
 var app = express()
@@ -9,17 +9,15 @@ app.use( bodyParser.urlencoded( {extended:false} ) )
 app.use( router )
 
 router.get('/carrera', function(req, res){
-   console.log(req.headers)
-    
-    res.send('Lista de carreras de la Universidad Politecnica Salesiana-Sede Guayaquil')
+       response.success(req, res, 'Lista de carreras de la Universidad Politecnica Salesiana-Sede Guayaquil',200 )
 
 })
 
 router.post('/carrera', function(req, res){
 if(req.query.error == 'ok'){
-res.status(500).send( {tipo_error:1, mensaje_error:'Error en el servidor', mensaje_exito:''})
+    response.error(req, res, 'Error al ingresar la carrera',500 )
 }else{
-    res.status(200).send( {tipo_error:0, mensaje_error:'', mensaje_exito:'Todo ok'})
+    response.success(req, res, 'Ingreso de carrera exitoso',201)
 
 }
 })
